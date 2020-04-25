@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0"  >
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block css %}
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
+    {% endblock %}
+    {% block script %}
+    <script src="{% static 'blog/js/base.js' %}"></script>
+    {% endblock %}
+    <title>The home page </title>
+</head>
+<body>
+<nav>
+    <div class="logo">
+
+
+       <h4> Welcome to Blog app</h4>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="#">home</a>
+        </li>
+        <li>
+            <a href="#">about</a>
+        </li>
+        <li>
+            <a href="#">posts</a>
+       </li>
+        <li>
+            <a href="#">login</a>
+        </li>
+        <li >
+            <a href="#">register</a>
+        </li>
+    </ul>
+    <div class="three-line">
+        <div class="line 1"></div>
+        <div class="line 2"></div>
+        <div class="line 3"></div>
+    </div>
+
+</nav>
+{% block content %} {% endblock %}
+</body>
+
