@@ -4,7 +4,7 @@ from django.contrib.auth import (
     login,
     logout
 )
-from django.shortcuts import redirect
+from django.shortcuts import redirect,render
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -15,8 +15,9 @@ from django.views.generic import (
 from blog import forms
 
 class Registration(FormView):
+    template_name = "blog/register.html"
     form_class = forms.Registration
-    template_name = '#'
+
 
     @transaction.atomic
     def post(self, request, *args, **kwargs):
@@ -33,7 +34,7 @@ class Registration(FormView):
 
 
 class SignUpDone(TemplateView):
-    template_name = '#'
+    template_name = 'blog/signupdone.html'
 
 
 class Login(FormView):

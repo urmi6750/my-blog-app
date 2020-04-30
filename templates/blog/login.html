@@ -11,6 +11,7 @@
 {% block content %}
     <div class="content">
       <form method="post" action="{% url 'Login' %}">
+        {% csrf_token %}
 
           {% for field in form %}
               <p>
