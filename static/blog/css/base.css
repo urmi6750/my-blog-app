@@ -10,9 +10,24 @@ nav{
     align-items: center;
     min-height: 8vh;
     background-color: #5D4954;
-    font-family: 'acme', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-
+.content{
+    -webkit-box-shadow: 0 0 5px 2px #F0F8FF;
+    -moz-box-shadow: 0 0 5px 2px #F0F8FF;
+    box-shadow: 0 0 5px 2px  #fff;
+    background: #F0F8FF;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    top: 100px;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    min-height: 82vh;
+    width: 100%;
+    position: relative;
+}
 .logo{
     color:rgb(197, 193, 193);
     text-transform: uppercase;
@@ -34,11 +49,11 @@ nav{
     font-weight: bold;
     font-size: 14px;
 }
-.three-line{
+.burger{
     display:none;
     cursor: pointer;
 }
-.three-line div{
+.burger div{
     width: 25px;
     height:3px;
     background-color:rgb(197, 193, 193);
@@ -70,11 +85,11 @@ nav{
         .nav-links li{
             opacity:0;
         }
-        .three-line{
+        .burger{
             display: block;
         }
     }
-.nav-active{
+    .nav-active{
         transform: translateX(0%);
     }
 

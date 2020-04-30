@@ -37,7 +37,7 @@ class SignUpDone(TemplateView):
 
 
 class Login(FormView):
-    template_name = '#'
+    template_name = 'blog/login.html'
     form_class = forms.LoginForm
 
     def post(self, request, *args, **kwargs):

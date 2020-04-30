@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class Registration(User):
+class Registration(UserCreationForm):
     use_required_attribute = False
 
     class Meta:
