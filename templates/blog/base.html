@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
-    <title>Responsive Nav</title>
+    <title>Blog app</title>
 </head>
 <body>
     <nav>
@@ -16,14 +16,15 @@
             <h4>The Nav</h4>
 </div>
 <ul class="nav-links">
-   <li><a href="#">Home</a></li>
     {% if request.user.is_authenticated %}
-
-    <li><a href="">logout</a> </li>
+    <li>
+     <a href="{% url 'Profile' %}" > Profile</a>
+    </li>
+    <li><a href="{% url 'Logout' %}">logout</a> </li>
     <li>
           {{ request.user.username }}
 
-    </li>
+
     {% else %}
     <li><a href="{% url 'Register' %}">Registration</a></li>
     <li><a href="{% url 'Login' %}">Login</a></li>
@@ -37,6 +38,13 @@
 
     </nav>
     <script src="{% static 'blog/js/base.js' %}"></script>
+    {% if massages %}
+        {% for message in messages %}
+            <div class="content-message-{{ message.tags}}">
+             {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
 {% block content %} {% endblock %}
 </body>
 </html>

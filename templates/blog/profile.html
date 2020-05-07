@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="content-profile">
+    {% csrf_token %}
+     <img class="image-content" src="{{ user.Profile.img.url }}">
+      <div>
+          <h2>{{ user.username }}</h2>
+          <p> {{ user.email }}</p>
+      </div>
+    </div>
 
-</body>
-</html>
+{% endblock %}
