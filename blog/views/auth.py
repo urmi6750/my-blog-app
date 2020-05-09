@@ -78,7 +78,7 @@ class LogOut(View):
 
 
 class Profile(View):
-    template_name = 'profile.html'
+    template_name = 'blog/profile.html'
     form = UserUpdateForm
     profile_form = ProfileUpdateForm
 
@@ -98,7 +98,7 @@ class Profile(View):
                                                         'profile_form': self.profile_form})
 
     def get(self, request):
-        if self.request.user.is_authenticated():
+        if self.request.user.is_authenticated:
             return render(request, self.template_name)
         else:
             return render(request, self.template_name, {'user_form': self.form, 'profile_form': self.profile_form})

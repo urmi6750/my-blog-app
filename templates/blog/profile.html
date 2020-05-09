@@ -1,12 +1,23 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-    <div class="content-profile">
-    {% csrf_token %}
-     <img class="image-content" src="{{ user.Profile.img.url }}">
+   <div class="content-section">
       <div>
+        <img src="{{ user.profile.image.url }}">
+        <div>
           <h2>{{ user.username }}</h2>
-          <p> {{ user.email }}</p>
+          <p >{{ user.email }}</p>
+        </div>
       </div>
-    </div>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset >
+              <legend >Profile Info</legend>
+              {{ user_form}}
+              {{ profile_form }}
+          </fieldset>
+          <div >
+              <button type="submit">Update</button>
+          </div>
+      </form>
 
 {% endblock %}
