@@ -14,12 +14,12 @@ def home(request):
     context = {
         'posts': Post.objects.all()
     }
-    return render(request, 'blog_main/home.html', context)
+    return render(request, 'Posts/home.html', context)
 
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog_main/home.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'Posts/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
@@ -64,4 +64,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 def about(request):
-    return render(request, 'blog_main/about.html', {'title': 'About'})
+    return render(request, 'Posts/about.html', {'title': 'About'})

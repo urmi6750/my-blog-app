@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
     <title>Blog app</title>
 </head>
+{% block css %} {% endblock %}
 <body>
     <nav>
         <div class="logo">
@@ -17,6 +18,10 @@
 </div>
 <ul class="nav-links">
     {% if request.user.is_authenticated %}
+     <li>
+         <a href="{% url 'post-create' %}">New Post</a>
+
+     </li>
     <li>
      <a href="{% url 'Profile' %}" > Profile</a>
     </li>
@@ -46,5 +51,19 @@
         {% endfor %}
     {% endif %}
 {% block content %} {% endblock %}
+<div class="col-md-4">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p>You can put any information here you'd like.
+              <ul >
+                <li >Latest Posts</li>
+                <li >Announcements</li>
+                <li >Calendars</li>
+                <li>etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
