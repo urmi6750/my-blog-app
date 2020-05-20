@@ -15,31 +15,34 @@
     <nav>
         <div class="logo">
             <h4>Welcome Python Bloggers</h4>
-</div>
-<ul class="nav-links">
-    {% if request.user.is_authenticated %}
-     <li>
+        </div>
+        <div>
+            <a href="{% url 'blog-home' %}">Home</a>
+        </div>
+       <ul class="nav-links">
+         {% if request.user.is_authenticated %}
+        <li>
          <a href="{% url 'post-create' %}">New Post</a>
-
-     </li>
-    <li>
-     <a href="{% url 'Profile' %}" > Profile</a>
-    </li>
-    <li><a href="{% url 'Logout' %}">logout</a> </li>
-    <li>
+        </li>
+        <li>
+          <a href="{% url 'Profile' %}" > Profile</a>
+        </li>
+        <li>
+            <a href="{% url 'Logout' %}">logout</a> </li>
+        <li>
           {{ request.user.username }}
 
 
-    {% else %}
-    <li><a href="{% url 'Register' %}">Registration</a></li>
-    <li><a href="{% url 'Login' %}">Login</a></li>
-    {% endif %}
-</ul>
-<div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-</div>
+         {% else %}
+         <li><a href="{% url 'Register' %}">Registration</a></li>
+         <li><a href="{% url 'Login' %}">Login</a></li>
+         {% endif %}
+       </ul>
+       <div class="burger">
+           <div class="line1"></div>
+           <div class="line2"></div>
+           <div class="line3"></div>
+       </div>
 
     </nav>
     <script src="{% static 'blog/js/base.js' %}"></script>
